@@ -1,18 +1,85 @@
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+/* Body & fonts */
 body {
   background: #0f172a;
   color: #e5e7eb;
-  font-family: sans-serif;
-  text-align: center;
-  padding: 3rem;
+  font-family: 'Segoe UI', sans-serif;
+  padding-top: 3.5rem; /* for nav */
+  line-height: 1.6;
 }
 
+/* Navigation bar */
+#top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #020617;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  border-bottom: 1px solid #1e293b;
+  z-index: 1000;
+}
+#top-nav a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+}
+#top-nav a:hover { color: #0ea5e9; }
+
+/* Center input box */
+.center-box {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  margin-top:3rem;
+}
+
+/* Inputs & buttons */
 input {
   padding: 10px;
-  width: 200px;
+  width: 220px;
+  border-radius: 6px;
+  border: 1px solid #64748b;
+  margin-top: 10px;
 }
-
 button {
   padding: 10px 15px;
-  margin-left: 5px;
+  margin-top: 10px;
   cursor: pointer;
+  border-radius: 6px;
+  background-color: #38bdf8;
+  border: none;
+  color: #0f172a;
+  font-weight: bold;
+}
+button:hover { background-color: #0ea5e9; }
+.reset-btn { background-color: #f87171; }
+.reset-btn:hover { background-color: #ef4444; }
+
+/* Cards */
+.card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 700px;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+h1,h2,h3 { color:#38bdf8; margin-bottom:0.5rem; }
+section { padding:2rem 1rem; }
+
+/* Welcome section */
+.welcome-section { text-align:center; margin-bottom:2rem; }
+
+/* Responsive */
+@media(max-width:700px){
+  input { width: 180px; }
 }

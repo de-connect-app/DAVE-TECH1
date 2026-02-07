@@ -2,21 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dave Tech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dave Tech 1.0</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div id="name-box">
+  <!-- Top Navigation -->
+  <nav id="top-nav">
+    <a href="#truths">Tech Truths</a>
+    <a href="#how">How It Works</a>
+    <a href="#errors">Errors & Fixes</a>
+    <a href="#paths">Build Paths</a>
+  </nav>
+
+  <!-- Name input / welcome -->
+  <div id="name-box" class="center-box">
     <h2>Welcome 👋</h2>
     <p>Enter your name to continue</p>
     <input type="text" id="username" placeholder="Your name">
     <button onclick="saveName()">Continue</button>
   </div>
 
+  <!-- Main content -->
   <div id="content" style="display:none;">
-    <h1>Welcome, <span id="displayName"></span> 👨‍💻</h1>
-    <p>This is Dave Tech — advanced tech explained simply.</p>
+
+    <div class="welcome-section">
+      <h1>Welcome, <span id="displayName"></span> 👨‍💻</h1>
+      <p>This is Dave Tech — advanced tech explained simply.</p>
+      <button onclick="resetName()" class="reset-btn">Change Name</button>
+    </div>
+
+    <!-- Sections -->
+    <section id="truths">
+      <h2>Tech Truths</h2>
+      <div class="card">
+        <h3>Advanced ≠ Complicated</h3>
+        <p>Advanced developers understand flow, logic, and problem-solving—not just syntax.</p>
+      </div>
+      <div class="card">
+        <h3>Frameworks Don’t Make You Senior</h3>
+        <p>Master fundamentals first, frameworks come later.</p>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2>How It Works</h2>
+      <div class="card">
+        <h3>What Happens When You Run an App?</h3>
+        <p>Your code loads, dependencies resolve, server listens for requests, and your app responds to events.</p>
+      </div>
+    </section>
+
+    <section id="errors">
+      <h2>Errors & Fixes</h2>
+      <div class="card">
+        <h3>Errors Are Feedback</h3>
+        <p>An error is the system telling you where your logic disagrees with reality.</p>
+      </div>
+    </section>
+
+    <section id="paths">
+      <h2>Build Paths</h2>
+      <div class="card">
+        <h3>Zero → WhatsApp Bot</h3>
+        <p>Learn requests, sessions, events, and state. Tools come later. Understanding flow first makes everything easier.</p>
+      </div>
+    </section>
+
   </div>
 
   <script src="app.js"></script>

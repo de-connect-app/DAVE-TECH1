@@ -3,19 +3,25 @@ const content = document.getElementById("content");
 const displayName = document.getElementById("displayName");
 
 function saveName() {
-  const name = document.getElementById("username").value;
-  if (!name) return alert("Please enter your name");
+  const name = document.getElementById("username").value.trim();
+  if(!name) return alert("Please enter your name");
   localStorage.setItem("daveTechUser", name);
   loadUser();
 }
 
 function loadUser() {
   const savedName = localStorage.getItem("daveTechUser");
-  if (savedName) {
+  if(savedName) {
     nameBox.style.display = "none";
     content.style.display = "block";
     displayName.textContent = savedName;
   }
+}
+
+function resetName() {
+  localStorage.removeItem("daveTechUser");
+  content.style.display = "none";
+  nameBox.style.display = "flex";
 }
 
 loadUser();
