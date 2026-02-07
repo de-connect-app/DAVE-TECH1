@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dave Tech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="name-box">
+    <h2>Welcome 👋</h2>
+    <p>Enter your name to continue</p>
+    <input type="text" id="username" placeholder="Your name">
+    <button onclick="saveName()">Continue</button>
+  </div>
+
+  <div id="content" style="display:none;">
+    <h1>Welcome, <span id="displayName"></span> 👨‍💻</h1>
+    <p>This is Dave Tech — advanced tech explained simply.</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
