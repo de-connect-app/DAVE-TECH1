@@ -1,77 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dave Tech 1.0</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dave Tech</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body { background:#0f172a; color:#f1f5f9; font-family: 'Courier New', monospace; margin:0; padding:0; }
+.card { background:#1e293b; padding:1rem; margin:0.5rem 0; border-radius:8px; transition: transform 0.3s; }
+.card:hover { transform: scale(1.02); }
+button { padding:0.5rem 1rem; margin:0.3rem; background:#3b82f6; color:white; border:none; border-radius:5px; cursor:pointer; }
+button:hover { background:#2563eb; }
+.progress-bar div { transition: width 1s ease; }
+.lesson-content { margin-top:0.5rem; }
+#bot-chat { display:none; margin-top:1rem; }
+.chat-msg { padding:0.5rem; margin:0.2rem 0; border-radius:5px; }
+.user-msg { background:#2563eb; color:white; align-self:flex-end; }
+.bot-msg { background:#facc15; color:#0f172a; align-self:flex-start; }
+#chat-box { display:flex; flex-direction:column; max-height:200px; overflow-y:auto; }
+</style>
 </head>
 <body>
 
-  <!-- Top Navigation -->
-  <nav id="top-nav">
-    <a href="#truths">Tech Truths</a>
-    <a href="#how">How It Works</a>
-    <a href="#errors">Errors & Fixes</a>
-    <a href="#paths">Build Paths</a>
-  </nav>
+<h1>Welcome, <span id="displayName"></span> 👨‍💻</h1>
 
-  <!-- Name input / welcome -->
-  <div id="name-box" class="center-box">
-    <h2>Welcome 👋</h2>
-    <p>Enter your name to continue</p>
-    <input type="text" id="username" placeholder="Your name">
-    <button onclick="saveName()">Continue</button>
-  </div>
+<h2>Dashboard</h2>
+<div id="progress-cards"></div>
+<p>Total Score: <span id="total-score">0</span></p>
 
-  <!-- Main content -->
-  <div id="content" style="display:none;">
+<h2>Modules</h2>
+<button class="module-btn" data-module="truths">Tech Truths</button>
+<button class="module-btn" data-module="how">How It Works</button>
+<button class="module-btn" data-module="errors">Errors & Fixes</button>
+<button class="module-btn" data-module="paths">Build Paths</button>
+<button class="module-btn" data-module="botSession">Bot Session</button>
 
-    <div class="welcome-section">
-      <h1>Welcome, <span id="displayName"></span> 👨‍💻</h1>
-      <p>This is Dave Tech — advanced tech explained simply.</p>
-      <button onclick="resetName()" class="reset-btn">Change Name</button>
-    </div>
+<h2>Quizzes</h2>
+<button class="quiz-btn" data-module="truths">Tech Truths Quiz</button>
+<button class="quiz-btn" data-module="how">How It Works Quiz</button>
+<button class="quiz-btn" data-module="errors">Errors & Fixes Quiz</button>
+<button class="quiz-btn" data-module="paths">Build Paths Quiz</button>
+<button class="quiz-btn" data-module="botSession">Bot Session Quiz</button>
 
-    <!-- Sections -->
-    <section id="truths">
-      <h2>Tech Truths</h2>
-      <div class="card">
-        <h3>Advanced ≠ Complicated</h3>
-        <p>Advanced developers understand flow, logic, and problem-solving—not just syntax.</p>
-      </div>
-      <div class="card">
-        <h3>Frameworks Don’t Make You Senior</h3>
-        <p>Master fundamentals first, frameworks come later.</p>
-      </div>
-    </section>
+<div id="module-container"></div>
+<div id="quiz-container"></div>
 
-    <section id="how">
-      <h2>How It Works</h2>
-      <div class="card">
-        <h3>What Happens When You Run an App?</h3>
-        <p>Your code loads, dependencies resolve, server listens for requests, and your app responds to events.</p>
-      </div>
-    </section>
+<div id="bot-chat">
+  <h3>Bot Session</h3>
+  <div id="chat-box"></div>
+  <input id="bot-input" placeholder="Ask about bots..." />
+  <button id="bot-send">Send</button>
+</div>
 
-    <section id="errors">
-      <h2>Errors & Fixes</h2>
-      <div class="card">
-        <h3>Errors Are Feedback</h3>
-        <p>An error is the system telling you where your logic disagrees with reality.</p>
-      </div>
-    </section>
+<script src="lesson.js"></script>
+<script src="app.js" defer></script>
 
-    <section id="paths">
-      <h2>Build Paths</h2>
-      <div class="card">
-        <h3>Zero → WhatsApp Bot</h3>
-        <p>Learn requests, sessions, events, and state. Tools come later. Understanding flow first makes everything easier.</p>
-      </div>
-    </section>
-
-  </div>
-
-  <script src="app.js"></script>
 </body>
 </html>
